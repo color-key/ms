@@ -1,0 +1,57 @@
+name: web mobile ci
+
+on:
+  push:
+    branches:
+      - mobile
+
+jobs:
+  build-and-deploy-to-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: ssh-agent
+        uses: webfactory/ssh-agent@v0.1.1
+        with:
+          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+        env:
+          SERVER_HOST_NAME: ${{ secrets.SERVER_HOST_NAME }}
+
+      - name: Setup knownhosts
+        run: ssh-keyscan ${{ secrets.SERVER_HOST_NAME }} >> ~/.ssh/known_hosts
+
+      - name: Run SSH Command To init directory
+        run: ssh root@${{ secrets.SERVER_HOST_NAME }} "(mkdir ${{ secrets.SERVER_SERVICE_TARGET }}/public || true) && (mkdir ${{ secrets.SERVER_SERVICE_TARGET }}/public/dist || true)"
+
+      - name: Deploy mobile to Server
+        uses: easingthemes/ssh-deploy@v2.1.2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          # ARGS: '-rltgoDzvO --delete'
+          SOURCE: 'dist/index.html'
+          REMOTE_HOST: ${{ secrets.SERVER_HOST_NAME }}
+          REMOTE_USER: ${{ secrets.SERVER_USER_NAME }}
+          TARGET: ${{ secrets.SERVER_SERVICE_TARGET }}/public/dist
+
+      - name: Deploy mobile to Server
+        uses: easingthemes/ssh-deploy@v2.1.2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: '-rltgoDzvO --delete'
+          SOURCE: 'm/'
+          REMOTE_HOST: ${{ secrets.SERVER_HOST_NAME }}
+          REMOTE_USER: ${{ secrets.SERVER_USER_NAME }}
+          TARGET: ${{ secrets.SERVER_SERVICE_TARGET }}/public/m
+
+      - name: Deploy mobile dist to Server
+        uses: easingthemes/ssh-deploy@v2.1.2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: '-rltgoDzvO --delete'
+          SOURCE: 'dist/m/'
+          REMOTE_HOST: ${{ secrets.SERVER_HOST_NAME }}
+          REMOTE_USER: ${{ secrets.SERVER_USER_NAME }}
+          TARGET: ${{ secrets.SERVER_SERVICE_TARGET }}/public/dist/m
+  

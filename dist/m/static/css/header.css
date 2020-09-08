@@ -1,0 +1,3 @@
+.footer_new{display:none;}
+#banner .bd li { display: none; }
+#banner .bd li:nth-child(1) { display: block; }

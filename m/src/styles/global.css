@@ -1,0 +1,8 @@
+body{
+  margin: 0 auto;
+  background: #FFFFFF;
+}
+
+#newBridge{
+  display: none !important;
+}

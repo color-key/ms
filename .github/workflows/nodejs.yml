@@ -1,0 +1,39 @@
+name: nodejs ci
+
+on:
+  push:
+    branches:
+      - nodejs
+
+jobs:
+  build-and-deploy-to-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Deploy nodejs to Server
+        uses: easingthemes/ssh-deploy@v2.1.2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: '-rltgoDzvO --delete'
+          SOURCE: 'nodejs/'
+          REMOTE_HOST: ${{ secrets.SERVER_HOST_NAME }}
+          REMOTE_USER: ${{ secrets.SERVER_USER_NAME }}
+          TARGET: ${{ secrets.SERVER_SERVICE_TARGET }}/nodejs
+
+      - name: ssh-agent
+        uses: webfactory/ssh-agent@v0.1.1
+        with:
+          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+        env:
+          SERVER_HOST_NAME: ${{ secrets.SERVER_HOST_NAME }}
+
+      - name: Setup knownhosts
+        run: ssh-keyscan ${{ secrets.SERVER_HOST_NAME }} >> ~/.ssh/known_hosts
+
+      - name: Run SSH Command To build nodejs server
+        run: ssh root@${{ secrets.SERVER_HOST_NAME }} "(docker stop tianlad-nodejs || true) && (docker rm tianlad-nodejs || true) && (docker rmi tianlad-nodejs || true) && cd ${{ secrets.SERVER_SERVICE_TARGET }}/nodejs && docker build -t tianlad-nodejs . && docker run --restart=always -d -p 3003:3000 -v ${{ secrets.SERVER_SERVICE_TARGET }}/public:/app/public --name tianlad-nodejs tianlad-nodejs"
+      
+
+  
