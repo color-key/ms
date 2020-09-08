@@ -28,6 +28,7 @@ export default function MyApp(props: AppProps) {
         <link rel="manifest" href={`${PATH_PREFIX}/manifest.json`} />
         <link rel="icon" type="image/x-icon" href={`${PATH_PREFIX}/favicon.ico`} />
         <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui"/>
+        <script src={`${PATH_PREFIX}/static/js/judge-terminal-equipment.js`}/>
       </Head>
       <Component {...pageProps} />
     </React.Fragment>
