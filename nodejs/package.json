@@ -1,5 +1,5 @@
 {
-  "name": "tianlad",
+  "name": "nodejs-api",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   "dependencies": {
     "@octokit/core": "^3.1.0",
     "archiver": "^4.0.1",
+    "dotenv": "^8.2.0",
     "koa": "^2.12.1",
     "koa-body": "^4.2.0",
     "koa-bodyparser": "^4.3.0",

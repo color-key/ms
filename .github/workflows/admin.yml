@@ -23,7 +23,7 @@ jobs:
         run: ssh-keyscan ${{ secrets.SERVER_HOST_NAME }} >> ~/.ssh/known_hosts
 
       - name: Run SSH Command To init directory
-        run: ssh root@${{ secrets.SERVER_HOST_NAME }} "(mkdir ${{ secrets.SERVER_SERVICE_TARGET }}/public || true) && (mkdir ${{ secrets.SERVER_SERVICE_TARGET }}/public/dist || true)"
+        run: ssh root@${{ secrets.SERVER_HOST_NAME }} "(mkdir ${{ secrets.SERVER_SERVICE_TARGET }}/ms/public || true) && (mkdir ${{ secrets.SERVER_SERVICE_TARGET }}/ms/public/dist || true)"
 
       - name: Deploy home to Server
         uses: easingthemes/ssh-deploy@v2.1.2
@@ -33,5 +33,5 @@ jobs:
           SOURCE: 'dist/admin/'
           REMOTE_HOST: ${{ secrets.SERVER_HOST_NAME }}
           REMOTE_USER: ${{ secrets.SERVER_USER_NAME }}
-          TARGET: ${{ secrets.SERVER_SERVICE_TARGET }}/public/dist/admin
+          TARGET: ${{ secrets.SERVER_SERVICE_TARGET }}/ms/public/dist/admin
   

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Koa = require('koa');
 const router = require('koa-router')();
 const koaBody = require('koa-body');
