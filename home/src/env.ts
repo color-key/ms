@@ -3,4 +3,4 @@ export const ASSET_PREFIX: string = process.env.ASSET_PREFIX || '';
 export const BASE_URL = '/api';
 // export const BASE_URL = '/test-api';
 // export const SERVER_URL = 'http://localhost:3000';
-export const SERVER_URL = 'http://ceshi3216.tianlad/api';
+export const SERVER_URL = 'http://ceshi3216.tianlad.com/api';
