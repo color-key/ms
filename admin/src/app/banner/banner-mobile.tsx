@@ -51,7 +51,7 @@ export default () => {
         initFiles.current[i] = img;
       }
     }
-    postJson({path: BASE_URL+'/banner/upd', data: {banner: initFiles.current.join(','), id: 1}}).then(res => {
+    postJson({path: BASE_URL+'/bannerMobile/upd', data: {banner: initFiles.current.join(','), id: 1}}).then(res => {
       if(res.success){
         alert('保存成功');
         setChange(false);
@@ -62,7 +62,7 @@ export default () => {
   }
 
   const getData = () => {
-    getJson({path: BASE_URL+'/banner/findById', data: {id: 1}}).then(res => {
+    getJson({path: BASE_URL+'/bannerMobile/findById', data: {id: 1}}).then(res => {
       if(res.success && res.result[0]){
         initFiles.current = res.result[0].banner.split(',');
         setFiles(initFiles.current);
@@ -97,7 +97,7 @@ export default () => {
     <>
       <DropzoneArea
         key={initNo}
-        dropzoneText={'拖拽图片文件到此处或者点击此处（电脑端）'}
+        dropzoneText={'拖拽图片文件到此处或者点击此处（手机端）'}
         initialFiles = {files}
         acceptedFiles={['image/*']}
         filesLimit={6}

@@ -100,14 +100,14 @@ const navData = [{
   icon: SupervisorAccountIcon,
   text: '管理员',
   path: ''
-},{
-  icon: BookIcon,
-  text: '天蕾学堂',
-  path: '/blog'
-},{
-  icon: ListAltIcon,
-  text: '表单获取',
-  path: '/demand'
+// },{
+//   icon: BookIcon,
+//   text: '天蕾学堂',
+//   path: '/blog'
+// },{
+//   icon: ListAltIcon,
+//   text: '表单获取',
+//   path: '/demand'
 },{
   icon: TitleIcon,
   text: 'TDK管理',

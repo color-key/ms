@@ -2,7 +2,7 @@ const {query} = require('./mysql');
 const {getQueryString} = require('./lib/query');
 const {datetimeFormat} = require('./lib/date-format');
 
-const mysqlTable = "ms_banner";
+const mysqlTable = "ms_banner_mobile";
 
 // id, title, description, keywords, path, createTime, updateTime
 

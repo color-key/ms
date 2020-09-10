@@ -8,6 +8,7 @@ const seo = require('./seo');
 const menu = require('./menu');
 const tdk = require('./tdk');
 const banner = require('./banner');
+const bannerMobile = require('./bannerMobile');
 const ssh = require('./ssh');
 const {auth} = require('./auth');
 
@@ -183,6 +184,36 @@ router.post('/banner/add', async (ctx, next) => {
 
 router.post('/banner/upd', async (ctx, next) => {
   const res = await banner.upd(ctx);
+  ctx.response.type = 'application/json';
+  ctx.response.body = res;
+});
+
+router.get('/bannerMobile/findByPage', async (ctx, next) => {
+  const res = await bannerMobile.findByPage(ctx);
+  ctx.response.type = 'application/json';
+  ctx.response.body = res;
+});
+
+router.get('/bannerMobile/findById', async (ctx, next) => {
+  const res = await bannerMobile.findById(ctx);
+  ctx.response.type = 'application/json';
+  ctx.response.body = res;
+});
+
+router.get('/bannerMobile/findByPath', async (ctx, next) => {
+  const res = await bannerMobile.findByPath(ctx);
+  ctx.response.type = 'application/json';
+  ctx.response.body = res;
+});
+
+router.post('/bannerMobile/add', async (ctx, next) => {
+  const res = await bannerMobile.add(ctx);
+  ctx.response.type = 'application/json';
+  ctx.response.body = res;
+});
+
+router.post('/bannerMobile/upd', async (ctx, next) => {
+  const res = await bannerMobile.upd(ctx);
   ctx.response.type = 'application/json';
   ctx.response.body = res;
 });

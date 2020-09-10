@@ -134,6 +134,7 @@ export default () => {
             value={state.password}
             className={classes.textField}
             label="密码"
+            type="password"
             onChange={handleChange('password')}
             onKeyUp={handleKeyUp}
           />
