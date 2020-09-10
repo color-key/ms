@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import ListAltIcon from '@material-ui/icons/ListAlt';
+// import ListAltIcon from '@material-ui/icons/ListAlt';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 // import {getUser} from '@fay-react/lib/user';
 import {useRouter} from 'next/router';
@@ -18,7 +18,7 @@ import Link from 'next/link';
 import {PATH_PREFIX} from '@/env';
 // import UpdateIcon from '@material-ui/icons/Update';
 import TitleIcon from '@material-ui/icons/Title';
-import BookIcon from '@material-ui/icons/Book';
+// import BookIcon from '@material-ui/icons/Book';
 import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
 
 const useStyles = makeStyles((theme: Theme) =>

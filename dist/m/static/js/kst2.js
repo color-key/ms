@@ -32,7 +32,7 @@ var Mylike = function () {
         },
         //加载完执行
         afterLoad: function () {
-            $('.brand').append('<img src="/m/static/images/index/newindex/sm.jpg" alt=""><p style="text-align:center;font-size: 12px;color:#333; padding-bottom: 0.9rem">版权所有 © 上海美莱医疗美容门诊部有限公司 沪ICP备14048956 号 沪医广【2020】第04-10-G124号</p>');
+            $('.brand').append('<img src="/m/static/images/index/newindex/sm.jpg" alt=""><p style="text-align:center;font-size: 12px;color:#333; padding-bottom: 0.9rem">版权所有 © 哈尔滨美珊医疗整形有限公司 沪ICP备14048956 号 沪医广【2020】第04-10-G124号</p>');
            /* $('.new_foot').append('<div class="xcx" style="position:absolute;right: 1%; top: -130%; width: 26%;"><img src="/m/static/images/index/newindex/xcx.png" alt=""></div>');*/
             var _this = this;
             window.showLeftMenu = function () {
@@ -682,11 +682,11 @@ var Mylike = function () {
                 interTime: 16000
             });
         },
-        //首页美莱头条
+        //首页美珊头条
         indexTop: function () {
           var mltt = [
-            {"link":"/subject/activity/","title":"美莱20周年庆，全年仅此全线8折！","hot":"1"},
-            {"link":"/news/2557.html","title":"【美莱国际 学术之巅】『2017CCAM中国医疗美容大会』在上海隆重举行！","hot":""},
+            {"link":"/subject/activity/","title":"美珊20周年庆，全年仅此全线8折！","hot":"1"},
+            {"link":"/news/2557.html","title":"【美珊国际 学术之巅】『2017CCAM中国医疗美容大会』在哈尔滨隆重举行！","hot":""},
             {"link":"/news/2527.html","title":"杜园园教授受邀全国整形会议“中国医师协会“","hot":""},
             {"link":"/news/2544.html","title":"2017CCAM中国医疗美容大会在沪举行","hot":""}
           ];
@@ -823,7 +823,7 @@ var Mylike = function () {
                 }
             });
         },
-        //美莱在线分组
+        //美珊在线分组
         mylike_online: function () {
             var live_url = location.pathname + location.search;
             var ll = ['/', '/?pzwap', '/?js', '/?m.77meiren.com'];
@@ -905,7 +905,7 @@ var Mylike = function () {
                 return n < 10 ? '0' + n : n;
             };
             var res = this._type;
-            wxtip = res.wx ? res.wx : '我是美莱美丽顾问，要定制美丽方案，请加我...';
+            wxtip = res.wx ? res.wx : '我是美珊美丽顾问，要定制美丽方案，请加我...';
             if(res.ct){
                 $('.youhui-inner #bb2 .pp2').text(res.ct[0]);
                 $('.yh_tag a').each(function(i){
@@ -1058,8 +1058,8 @@ var Mylike = function () {
                                     '<div class="youhui-inner_n">' +
                                     '<div class="youhui-wrap">' +
                                     '<div class="wrap_c">' +
-                                    '<div class="wrap_t"><p class="pp1">上海美莱官方咨询平台</p></div>' +
-                                    '<div id="text1" class="chat"> <div class="toux"><img src="/m/static/images/index/newindex/kst_kf.jpg" alt="" /></div> <div class="text"><div  class="time1"><span id="times_b"></span></div> <p class="pp2">您好，我是上海美莱隆鼻顾问<span class="sj"><img src="/m/static/images/index/newindex/kst_l.jpg" alt="" /></span></p> </div> </div>' +
+                                    '<div class="wrap_t"><p class="pp1">哈尔滨美珊官方咨询平台</p></div>' +
+                                    '<div id="text1" class="chat"> <div class="toux"><img src="/m/static/images/index/newindex/kst_kf.jpg" alt="" /></div> <div class="text"><div  class="time1"><span id="times_b"></span></div> <p class="pp2">您好，我是哈尔滨美珊隆鼻顾问<span class="sj"><img src="/m/static/images/index/newindex/kst_l.jpg" alt="" /></span></p> </div> </div>' +
                                     '<div id="text2" class="chat"> <div class="toux"><img src="/m/static/images/index/newindex/kst_kf.jpg" alt=""></div> <div class="text"> <div class="time1"><span id="times_b1"></span></div> <p class="pp2">请问有什么隆鼻需求？让我在线为您解答！<span class="sj"><img src="/m/static/images/index/newindex/kst_l.jpg" alt=""></span></p> </div></div>' +
                                     '<div class="yh-cont"><textarea id="content" name="content" placeholder="在此输入可直接对话"></textarea> <a id="yhChat" href="javascript:void(0);" onclick="openK(this);return false;" style="display: block;">发送</a>  </div>' +
                                     '</div>' +
@@ -1209,7 +1209,7 @@ var Mylike = function () {
         //通用项目菜单
         projectMenu: function () {
             if (hosts[1].indexOf(host) == -1) {
-                var mymenu = '<div class="fixed-menu"><div class="fixed-menu-nav"><div id="item_nav"><div class="swiper-container item_nav"><ul class="swiper-wrapper"><li class="swiper-slide"><a href="/brand/">美莱品牌</a></li><li class="swiper-slide"><a href="/doctor/">国际专家部</a></li><li class="swiper-slide"><a href="/case/">美丽日记</a></li><li class="swiper-slide"><a href="/subject/shproject/aqtx/">安全体系</a></li></ul></div></div></div><div class="project_content_box"><div class="project_main"><ul class="project_nav"></ul><div class="project_item"></div><div class="return"><img src="/m/static/images/index/newindex/return.png" /></div></div></div></div>';
+                var mymenu = '<div class="fixed-menu"><div class="fixed-menu-nav"><div id="item_nav"><div class="swiper-container item_nav"><ul class="swiper-wrapper"><li class="swiper-slide"><a href="/brand/">美珊品牌</a></li><li class="swiper-slide"><a href="/doctor/">国际专家部</a></li><li class="swiper-slide"><a href="/case/">美丽日记</a></li><li class="swiper-slide"><a href="/subject/shproject/aqtx/">安全体系</a></li></ul></div></div></div><div class="project_content_box"><div class="project_main"><ul class="project_nav"></ul><div class="project_item"></div><div class="return"><img src="/m/static/images/index/newindex/return.png" /></div></div></div></div>';
                 $('body').append(mymenu);
                 var projects = {
                   "眼部整形": {
@@ -1291,9 +1291,9 @@ var Mylike = function () {
                     "热门技术": [
                       ["/subject/dgfx/", "深v动感丰胸"],
                       ["/subject/kemztzffx/", "科尔曼自体脂肪丰胸"],
-                      ["/subject/jtfx1/", "美莱假体丰胸"],
-                      ["/subject/rfxcjz/", "美莱乳房下垂矫正术"],
-                      ["/subject/jrsx/", "美莱巨乳缩小术"]
+                      ["/subject/jtfx1/", "美珊假体丰胸"],
+                      ["/subject/rfxcjz/", "美珊乳房下垂矫正术"],
+                      ["/subject/jrsx/", "美珊巨乳缩小术"]
                     ],
                     "推荐专家": [
                       ["/subject/doctor/whao/", "汪灏（hao）"],
@@ -1330,7 +1330,7 @@ var Mylike = function () {
                       ["/subject/mbtc2/", "面部填充"]
                     ],
                     "注射材料": [
-                      ["/subject/bnszh1/", "美莱玻尿酸"],
+                      ["/subject/bnszh1/", "美珊玻尿酸"],
                       ["/subject/rnbns/", "瑞蓝"],
                       ["/subject/ywbns/", "伊婉"],
                       ["/subject/rbybns/", "润百颜"],
@@ -1446,8 +1446,8 @@ var Mylike = function () {
                       ["/subject/qudouzh/", "痘坑"]
                     ],
                     "热门技术": [
-                      ["/subject/qudouzh/", "美莱医学祛痘"],
-                      ["/subject/qdy/", "美莱分型去痘印"],
+                      ["/subject/qudouzh/", "美珊医学祛痘"],
+                      ["/subject/qdy/", "美珊分型去痘印"],
                       ["/subject/gsqd/", "果酸祛痘美肤"]
                     ]
                   },
@@ -1460,8 +1460,8 @@ var Mylike = function () {
                       ["/subject/ruyun/", "乳晕漂红"]
                     ],
                     "热门技术": [
-                      ["/subject/wenx/", "美莱半永久纹绣"],
-                      ["/subject/banyjwm/", "美莱韩式半永久纹眉"],
+                      ["/subject/wenx/", "美珊半永久纹绣"],
+                      ["/subject/banyjwm/", "美珊韩式半永久纹眉"],
                       ["/subject/mtx/", "大眼美瞳线"],
                       ["/subject/3dtrcb/", "水晶润唇"],
                       ["/subject/3dtrcb/", "果冻亮唇"]
@@ -1605,7 +1605,7 @@ var Mylike = function () {
                 link.href = 'http://imgs.shmylike.com/zfm/css/menu.css';
                 var menu = document.getElementsByTagName('link')[0];
                 menu.parentNode.insertBefore(link, menu);
-                var zfmenu = '<div class="zfm_menu"><div class="zfm_content"><h3><img src="/image/jt.png" alt="" /><span>返回</span></h3><ul><li><dl><a href="javascript:openK()"><dt><span>关于我们</span><b>About Us</b><i></i></dt></a></dl></li><li><dl><dt><span>医生团队</span><b>Expert Team</b><i></i></dt><dd><p><a href="/subject/doctor/yyk/">袁玉坤</a></p><p><a href="/subject/doctor/zqg/">朱启刚</a></p></dd></dl></li><li><dl><dt><span>服务项目</span><b>Service Items</b><i></i></dt><dd><p><a href="/subject/zfzh/">头发种植</a></p><p><a href="/subject/fjxtz/">发际线调整</a></p><p><a href="/subject/meimzz/">眉毛种植</a></p><p><a href="/subject/huxzz/">胡须种植</a></p><p><a href="/subject/bjzz/">鬓角种植</a></p><p><a href="/subject/jiemyz/">睫毛种植</a></p><p><a href="/subject/bhzz/">疤痕种植</a></p><p><a href="/subject/smzz/">私密种植</a></p></dd></dl></li><li><dl><a href="/subject/zfal/"><dt><span>案例</span><b>The Case</b><i></i></dt></a></dl></li><li><dl><a href="/subject/zfjs/"><dt><span>技术</span><b>Technology</b><i></i></dt></a></dl></li><li><dl><a href="javascript:openK()"><dt><span>新闻</span><b>News</b><i></i></dt></a></dl></li><li><dl><dt><span>联系我们</span><b>Contact Us</b><i></i></dt><dd><p><a href="javascript:openK()">当月优惠</a></p><p><a href="javascript:openK()">美莱分院</a></p><p><a href="javascript:openK()">来院路线</a></p></dd></dl></li></ul></div></div>';
+                var zfmenu = '<div class="zfm_menu"><div class="zfm_content"><h3><img src="/image/jt.png" alt="" /><span>返回</span></h3><ul><li><dl><a href="javascript:openK()"><dt><span>关于我们</span><b>About Us</b><i></i></dt></a></dl></li><li><dl><dt><span>医生团队</span><b>Expert Team</b><i></i></dt><dd><p><a href="/subject/doctor/yyk/">袁玉坤</a></p><p><a href="/subject/doctor/zqg/">朱启刚</a></p></dd></dl></li><li><dl><dt><span>服务项目</span><b>Service Items</b><i></i></dt><dd><p><a href="/subject/zfzh/">头发种植</a></p><p><a href="/subject/fjxtz/">发际线调整</a></p><p><a href="/subject/meimzz/">眉毛种植</a></p><p><a href="/subject/huxzz/">胡须种植</a></p><p><a href="/subject/bjzz/">鬓角种植</a></p><p><a href="/subject/jiemyz/">睫毛种植</a></p><p><a href="/subject/bhzz/">疤痕种植</a></p><p><a href="/subject/smzz/">私密种植</a></p></dd></dl></li><li><dl><a href="/subject/zfal/"><dt><span>案例</span><b>The Case</b><i></i></dt></a></dl></li><li><dl><a href="/subject/zfjs/"><dt><span>技术</span><b>Technology</b><i></i></dt></a></dl></li><li><dl><a href="javascript:openK()"><dt><span>新闻</span><b>News</b><i></i></dt></a></dl></li><li><dl><dt><span>联系我们</span><b>Contact Us</b><i></i></dt><dd><p><a href="javascript:openK()">当月优惠</a></p><p><a href="javascript:openK()">美珊分院</a></p><p><a href="javascript:openK()">来院路线</a></p></dd></dl></li></ul></div></div>';
                 $('body').append(zfmenu);
                 $('#telephone img').attr('src', '/image/yuyue02.png');
                 $('#telephone').attr('href', 'tel:021-22235540');

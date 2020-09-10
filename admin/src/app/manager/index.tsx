@@ -2,7 +2,6 @@ import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import Table from './table';
 // import Search from './search';
-import EditDialog from './edit-dialog';
 
 const useStyles = makeStyles(() => ({
   root: {

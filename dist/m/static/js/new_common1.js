@@ -110,7 +110,7 @@ $(function () {
     }
 
     /*案例轮播*/
-    /*学术美莱*/
+    /*学术美珊*/
     var swiper = new Swiper('.index_science', {
         pagination: '.swiper-pagination',
         paginationClickable: true,
