@@ -371,13 +371,13 @@ var Mylike = function() {
         //加载首页banner
         indexBanner: function (n, m, s, t) {
             var _data = {
-              "index_br": [
-                {"id":"b5","link":"javascript:openK()"},
-                {"id":"b2","link":"javascript:openK()"},
-                {"id":"b3","link":"javascript:openK()"},
-                {"id":"b9","link":"javascript:openK()"},
-                {"id":"b1","link":"javascript:openK()"}
-              ],
+              // "index_br": [
+              //   {"id":"b5","link":"javascript:openK()"},
+              //   {"id":"b2","link":"javascript:openK()"},
+              //   {"id":"b3","link":"javascript:openK()"},
+              //   {"id":"b9","link":"javascript:openK()"},
+              //   {"id":"b1","link":"javascript:openK()"}
+              // ],
               "newActivity": [
                 {"link":"javascript:openK()","pic":"/images/newindex/activity0.jpg"},
                 {"link":"javascript:openK()","pic":"/images/newindex/activity1.jpg"},
@@ -397,23 +397,19 @@ var Mylike = function() {
                 {"link":"javascript:void(0)","pic":"/images/newindex/activity8.jpg","video":"/images/newindex/activity2.mp4"}
               ]
             };
-            // $.ajax({
-            //     url: "/plus/i.php?t=" + n,
-            //     dataType: "json",
-            //     type: "get",
-            //     success: function (data) {
-                  var data = _data[n];
+            if(n === 'index_br'){
+              $.ajax({
+                url: "/api/banner/findById?id=1",
+                dataType: "json",
+                type: "get",
+                success: function (res) {
+                  var data = res.result[0].banner.split(',');
                   console.log(data);
                   if (data != null) {
                     $('.' + n + ' .sider').empty();
                     for (var i = 0; i < data.length; i++) {
                         var html = {
-                            index_br: ['<li class="' + data[i].id + '"><a href="' + data[i].link + '"></a></li>', '.indexBanner'],
-                            newActivity: ['<a href="' + data[i].link + '"><img width="369" src="/home/static' + data[i].pic + '"></a>', ''],
-                            newsInfoActivity: ['<a href="' + data[i].link + '"><img width="369" src="/home/static' + data[i].pic + '"><p>"'+data[i].title+'"</p></a>', ''],
-                            indexVideo: ['<a href="' + data[i].link + '"><img width="100%" class="img_video" src="/home/static' + data[i].pic + '"><video src="/home/static' + data[i].video + '" x-webkit-airplay="allow" controls="controls" muted playsinline loop> </video></a>', ''],
-                            left_banner: ['<li><a href="' + data[i].link + '" title="' + data[i].name + '"><img src="/home/static' + data[i].src + '" width="268" height="266" alt="' + data[i].name + '" /></a></li>', ''],
-                            article_banner: ['<a href="' + data[i].link + '"><img src=' + data[i].src + '" /></a>', '']
+                            index_br: ['<li style="background:url('+data[i]+') no-repeat center"><a href="javascript:openK()"></a></li>', '.indexBanner'],
                         };
                         $('.' + n).is(':visible') || $(html[n][1]).addClass(n);
                         if (data.length != $('.' + n + ' .sider li').length) {
@@ -421,22 +417,54 @@ var Mylike = function() {
                         }
                     }
                   }
-                // },
-                // complete: function(){
-                    // (function slider() {
-                        $('.' + n).slide({
-                            mainCell: s,
-                            effect: m,
-                            titCell: ".hd",
-                            interTime: 5000,
-                            delayTime: 1000,
-                            autoPage: true,
-                            autoPlay: t,
-                            mouseOverStop: true
-                        });
-                    // })(n, m, s, t);
-                // }
-            // });
+                },
+                complete: function(){
+                  (function slider() {
+                    $('.' + n).slide({
+                        mainCell: s,
+                        effect: m,
+                        titCell: ".hd",
+                        interTime: 5000,
+                        delayTime: 1000,
+                        autoPage: true,
+                        autoPlay: t,
+                        mouseOverStop: true
+                    });
+                  })(n, m, s, t);
+                }
+              });
+            }else{
+              var data = _data[n];
+              console.log(data);
+              if (data != null) {
+                $('.' + n + ' .sider').empty();
+                for (var i = 0; i < data.length; i++) {
+                    var html = {
+                        index_br: ['<li background="url('+data.pic+') no-repeat center"><a href="' + data[i].link + '"></a></li>', '.indexBanner'],
+                        newActivity: ['<a href="' + data[i].link + '"><img width="369" src="/home/static' + data[i].pic + '"></a>', ''],
+                        newsInfoActivity: ['<a href="' + data[i].link + '"><img width="369" src="/home/static' + data[i].pic + '"><p>"'+data[i].title+'"</p></a>', ''],
+                        indexVideo: ['<a href="' + data[i].link + '"><img width="100%" class="img_video" src="/home/static' + data[i].pic + '"><video src="/home/static' + data[i].video + '" x-webkit-airplay="allow" controls="controls" muted playsinline loop> </video></a>', ''],
+                        left_banner: ['<li><a href="' + data[i].link + '" title="' + data[i].name + '"><img src="/home/static' + data[i].src + '" width="268" height="266" alt="' + data[i].name + '" /></a></li>', ''],
+                        article_banner: ['<a href="' + data[i].link + '"><img src=' + data[i].src + '" /></a>', '']
+                    };
+                    $('.' + n).is(':visible') || $(html[n][1]).addClass(n);
+                    if (data.length != $('.' + n + ' .sider li').length) {
+                        $('.' + n + ' .sider').append(html[n][0]);
+                    }
+                }
+              }
+           
+              $('.' + n).slide({
+                  mainCell: s,
+                  effect: m,
+                  titCell: ".hd",
+                  interTime: 5000,
+                  delayTime: 1000,
+                  autoPage: true,
+                  autoPlay: t,
+                  mouseOverStop: true
+              });
+            }
         },
         setIndex: function () {
             $('.indexBanner').is(':visible') && _self.indexBanner('index_br', 'leftLoop', '.sider', true);
