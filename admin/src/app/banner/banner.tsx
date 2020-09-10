@@ -23,7 +23,7 @@ export default () => {
   const upload = async (file: any) => {
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('folder', 'tianlad');
+    formData.append('folder', 'ms');
     try {
       const fetchRes = await fetch('/oss', {
         method: 'POST',
@@ -97,7 +97,7 @@ export default () => {
     <>
       <DropzoneArea
         key={initNo}
-        dropzoneText={'拖拽图片文件到此处或者点击此处'}
+        dropzoneText={'拖拽图片文件到此处或者点击此处（电脑端）'}
         initialFiles = {files}
         acceptedFiles={['image/*']}
         filesLimit={6}
