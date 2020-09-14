@@ -12,7 +12,7 @@ var Mylike = function () {
             this.chatWhere();
             this.TouchSlide();
             this.getType();
-            this.showCenter();
+            // this.showCenter();
             this.commons();
             this.loadSwiper();
             this.indexTop();
@@ -60,11 +60,11 @@ var Mylike = function () {
                 $('.li1 a').eq(1).attr('onclick', 'openK(this);return false;');
                 $('.li1 a').eq(0).attr('href','/kqm/');
             }else {
-              var yhpic = hosts[1].indexOf(host) > -1 && host != 'u.021mylike.com' ? 'callNow_zf' : 'callNow';
-              var dom = document.getElementById('domWrite');
-              var node = document.createElement('div');
-              node.innerHTML = '<a class="s-ripple" href="javascript:void(0);" onclick="openK(this);return false;" id="s-ripple"><img class="min-tel" src="/m/static/images/index/newindex/' + yhpic + '.png?v=20180410" alt=""></a>';
-              dom.parentNode.insertBefore(node, dom);
+              // var yhpic = hosts[1].indexOf(host) > -1 && host != 'u.021mylike.com' ? 'callNow_zf' : 'callNow';
+              // var dom = document.getElementById('domWrite');
+              // var node = document.createElement('div');
+              // node.innerHTML = '<a class="s-ripple" href="javascript:void(0);" onclick="openK(this);return false;" id="s-ripple"><img class="min-tel" src="/m/static/images/index/newindex/' + yhpic + '.png?v=20180410" alt=""></a>';
+              // dom.parentNode.insertBefore(node, dom);
             }
             if(this.ex(1)) {
                 $(".swt_center").hide();

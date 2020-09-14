@@ -12,6 +12,8 @@ import {getJson} from '@fay-react/lib/fetch';
 import {BASE_URL} from '@/env';
 import {ManagerType, SearchStateType} from './index';
 import {datetimeFormat} from '@/lib/date-format';
+import Button from '@material-ui/core/Button';
+import EditDialog from './edit-dialog';
 
 const useRowStyles = makeStyles({
   root: {
@@ -19,8 +21,8 @@ const useRowStyles = makeStyles({
   },
 });
 
-function Row(props: { row: ManagerType}) {
-  const { row } = props;
+function Row(props: { row: ManagerType, onEdit: (id: number) => void}) {
+  const { row, onEdit } = props;
   const classes = useRowStyles();
 
   return (
@@ -30,6 +32,7 @@ function Row(props: { row: ManagerType}) {
           {row.username}
         </TableCell>
         <TableCell>{datetimeFormat(row.creation_datetime)}</TableCell>
+        <TableCell align="center"><Button color={"primary"} onClick={() => onEdit(row.id)}>更新密码</Button></TableCell>
       </TableRow>
     </React.Fragment>
   );
@@ -44,6 +47,7 @@ export default ({search}: Props) => {
   const [data, setData] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [editDialogId, setEditDialogId] = React.useState(0);
 
   const handleChangePage = (_event: unknown, newPage: number) => {
     setPage(newPage);
@@ -54,8 +58,8 @@ export default ({search}: Props) => {
     setPage(0);
   };
 
-  const getData = (search: SearchStateType) => {
-    getJson({path: BASE_URL+'/manager/find', data: search}).then(res => {
+  const getData = (_search: SearchStateType) => {
+    getJson({path: BASE_URL+'/manager/find', data: _search}).then(res => {
       console.log(res);
       if(res.success){
         setData(res.result);
@@ -67,6 +71,14 @@ export default ({search}: Props) => {
     getData(search);
   }, [JSON.stringify(search)]);
 
+  const handleEdit = (id: number) => {
+    setEditDialogId(id);
+  }
+
+  const handleCloseEditDialog = () => {
+    setEditDialogId(0);
+  }
+
   return (
     <Paper>
       <TableContainer>
@@ -75,11 +87,12 @@ export default ({search}: Props) => {
             <TableRow>
               <TableCell>用户名</TableCell>
               <TableCell>创建时间</TableCell>
+              <TableCell align="center">操作</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: ManagerType) => (
-              <Row key={row.id} row={row}/>
+              <Row key={row.id} row={row} onEdit={handleEdit}/>
             ))}
           </TableBody>
         </Table>
@@ -93,6 +106,7 @@ export default ({search}: Props) => {
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
+      <EditDialog key={editDialogId} id={editDialogId} open={editDialogId>0} onClose={handleCloseEditDialog}/>
     </Paper>
   );
 }

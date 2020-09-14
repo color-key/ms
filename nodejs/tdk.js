@@ -2,7 +2,7 @@ const {query} = require('./mysql');
 const {getQueryString} = require('./lib/query');
 const {datetimeFormat} = require('./lib/date-format');
 
-const mysqlTable = "tianlad_tdk";
+const mysqlTable = "ms_tdk";
 
 // id, title, description, keywords, path, createTime, updateTime
 

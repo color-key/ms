@@ -4,7 +4,14 @@ const {datetimeFormat} = require('./lib/date-format');
 const shortid = require('shortid');
 const crypto = require('crypto');
 
-const mysqlTable = "tianlad_manager";
+const mysqlTable = "ms_manager";
+
+const generatePwd = (password) => {
+  const hash = crypto.createHash('sha256');
+  hash.update(password);
+  const pwd = hash.digest('hex');
+  return pwd;
+}
 
 const addManager = async (data) => {
   data.token = shortid.generate();
@@ -14,17 +21,27 @@ const addManager = async (data) => {
   return res;
 }
 
+
 const updPassword = async (data) => {
-  const sql = 'UPDATE '+mysqlTable+' SET password="'+data.password+'" WHERE id="'+data.id+'" and password="'+data.oldPassword+'"';
-  const res = await query(sql);
-  return res;
+  const oldPwd = generatePwd(data.oldPassword);
+  const newPwd = generatePwd(data.password);
+  const findSql = 'SELECT id,username,creation_datetime,token FROM '+mysqlTable+' WHERE `id` = ? and `password` = ?';
+  const args = [data.id, oldPwd];
+  const find = await query(findSql, args);
+  if(find.success){
+    if(find.result[0]){
+      const updSql = 'UPDATE '+mysqlTable+' SET password="'+newPwd+'" WHERE id="'+data.id+'" and password="'+oldPwd+'"';
+      const updRes = await query(updSql);
+      return updRes;
+    }else{
+      return {success:false, err: '旧密码错误'};
+    }
+  }
+  return {success:false, err: '服务器异常'};
 }
 
 const login = async (data) => {
-  const hash = crypto.createHash('sha256');
-  hash.update(data.password);
-  const pwd = hash.digest('hex');
-  console.log(pwd);
+  const pwd = generatePwd(data.password);
   const sql = 'SELECT id,username,creation_datetime,token FROM '+mysqlTable+' WHERE `username` = ? and `password` = ?';
   const args = [data.username, pwd];
   const res = await query(sql, args);

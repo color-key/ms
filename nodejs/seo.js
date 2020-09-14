@@ -2,7 +2,7 @@ const {query} = require('./mysql');
 const {getQueryString} = require('./lib/query');
 const {datetimeFormat} = require('./lib/date-format');
 
-const mysqlTable = "tianlad_seo";
+const mysqlTable = "ms_seo";
 
 // id, contactName, contactPhone, website, createTime, updateTime
 

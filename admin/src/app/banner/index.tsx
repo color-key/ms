@@ -1,6 +1,7 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import Banner from './banner';
+import BannerMobile from './banner-mobile';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -14,6 +15,10 @@ export default () => {
   return (
     <div className={classes.root}>
       <Banner/>
+      <br/>
+      <br/>
+      <br/>
+      <BannerMobile/>
     </div>
   )
 }

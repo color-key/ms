@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import Table from './table';
-import Search from './search';
+// import Search from './search';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -11,16 +11,15 @@ const useStyles = makeStyles(() => ({
 
 export default () => {
   const classes = useStyles();
-  const [state, setState] = React.useState<SearchStateType>({username: ''});
+  // const [state, setState] = React.useState<SearchStateType>({username: ''});
 
-  const handleSearch = (searchState: SearchStateType) => {
-    setState(searchState);
-  }
-
+  // const handleSearch = (searchState: SearchStateType) => {
+  //   setState(searchState);
+  // }
   return (
     <div className={classes.root}>
-      <Search onSearch={handleSearch}/>
-      <Table search={state}/>
+      {/* <Search onSearch={handleSearch}/> */}
+      <Table search={{username: ''}}/>
     </div>
   )
 }
