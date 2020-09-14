@@ -13,7 +13,7 @@ export default () => {
     <>
       <ul className="logo">
         <li>
-            <a href="index.html"><img src="static/images/newindex/logo.jpg" width="148" height="80" alt="美珊医疗美容门诊部"/></a>
+            <a href="index.html"><img src="/home/static/images/newindex/logo.jpg" width="148" height="80" alt="美珊医疗美容门诊部"/></a>
         </li>
       </ul>
     </>

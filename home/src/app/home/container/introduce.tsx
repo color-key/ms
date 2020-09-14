@@ -28,24 +28,24 @@ export default () => {
                     <a className="next"></a>
                     <div className="slider">
                         <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/180328/35-1P32Q62S5Y7.jpg" alt="2019第二届上海市中西医结合学会"/>
-                            <span></span>
-                            <p>2019第二届上海市中西医结合学会</p>
+                            <img width="267" height="351" src="/home/uploads/brand-dynamics/bd1.jpg" alt=""/>
+                            {/* <span></span> */}
+                            {/* <p>2019第二届上海市中西医结合学会</p> */}
                         </a>
 <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/171206/35-1G20615015E35.jpg" alt="『2017CCAM中国医疗美容大会』即将隆重举行！"/>
-                            <span></span>
-                            <p>『2017CCAM中国医疗美容大会』即将隆重举行！</p>
+                            <img width="267" height="351" src="/home/uploads/brand-dynamics/bd2.jpg" alt=""/>
+                            {/* <span></span> */}
+                            {/* <p>『2017CCAM中国医疗美容大会』即将隆重举行！</p> */}
                         </a>
 <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/180328/35-1P32Q63345Y2.jpg" alt="哈尔滨美珊鼻整形专家出席第35届Dallas鼻整形研讨"/>
-                            <span></span>
-                            <p>哈尔滨美珊鼻整形专家出席第35届Dallas鼻整形研讨</p>
+                            <img width="267" height="351" src="/home/uploads/brand-dynamics/bd3.jpg" alt=""/>
+                            {/* <span></span> */}
+                            {/* <p>哈尔滨美珊鼻整形专家出席第35届Dallas鼻整形研讨</p> */}
                         </a>
 <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/171224/35-1G2241G400a9.jpg" alt="微整之巅 华山论鉴︱2017年上海市中西医结合学会"/>
-                            <span></span>
-                            <p>微整之巅 华山论鉴︱2017年上海市中西医结合学会</p>
+                            <img width="267" height="351" src="/home/uploads/brand-dynamics/bd4.jpg" alt=""/>
+                            {/* <span></span> */}
+                            {/* <p>微整之巅 华山论鉴︱2017年上海市中西医结合学会</p> */}
                         </a>
 
                     </div>
@@ -57,31 +57,25 @@ export default () => {
                     <a className="next"></a>
                     <div className="slider">
                         <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/161018/29-16101Q43125433.jpg" alt="美珊专家出席医学美容年会并做讲座"/>
-                            <span></span>
-                            <p>美珊专家出席医学美容年会并做讲座</p>
+                            <img width="267" height="351" src="/home/uploads/media-coverage/mc1.jpg" alt="美珊专家出席医学美容年会并做讲座"/>
+                            {/* <span></span> */}
+                            {/* <p></p> */}
                         </a>//
 <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/170913/35-1F91314194V07.jpg" alt="哈尔滨美珊承办第一届中国国际整形美容高峰论坛"/>
-                            <span></span>
-                            <p>哈尔滨美珊承办第一届中国国际整形美容高峰论坛</p>
+                            <img width="267" height="351" src="/home/uploads/media-coverage/mc2.jpg" alt="哈尔滨美珊承办第一届中国国际整形美容高峰论坛"/>
+                            {/* <span></span> */}
+                            {/* <p></p> */}
                         </a>
 <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/allimg/170118/7-1F11Q4503B94.jpg" alt="美珊植发团队荣获哈尔滨美珊佳明星团队奖"/>
-                            <span></span>
-                            <p>美珊植发团队荣获哈尔滨美珊佳明星团队奖</p>
+                            <img width="267" height="351" src="/home/uploads/media-coverage/mc3.jpg" alt="美珊植发团队荣获哈尔滨美珊佳明星团队奖"/>
+                            {/* <span></span> */}
+                            {/* <p></p> */}
                         </a>
 <a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/allimg/160812/7-160Q2104414315.jpg" alt="瑞蓝所属高德美副总Mr.Brennan Alexandre莅临"/>
-                            <span></span>
-                            <p>瑞蓝所属高德美副总Mr.Brennan Alexandre莅临</p>
+                            <img width="267" height="351" src="/home/uploads/media-coverage/mc4.jpg" alt="瑞蓝所属高德美副总Mr.Brennan Alexandre莅临"/>
+                            {/* <span></span> */}
+                            {/* <p></p> */}
                         </a>
-<a onClick={onClick} target="_blank">
-                            <img width="267" height="351" src="uploads/allimg/160812/7-160Q210431LT.jpg" alt="哈尔滨美珊举办“MAKE UP FOR EVER幻境的艺术”彩妆沙"/>
-                            <span></span>
-                            <p>哈尔滨美珊举办“MAKE UP FOR EVER幻境的艺术”彩妆沙</p>
-                        </a>
-
                     </div>
                 </div>
                 <div className="introduce_scroll">
@@ -129,7 +123,7 @@ export default () => {
                     <a className="next"></a>
                     <div className="slider">
                         <a onClick={onClick}>
-                            <img width="267" height="351" src="uploads/180108/35-1P10Q40256195.jpg" alt="超皮秒"/>
+                            <img width="267" height="351" src="/home/uploads/180108/35-1P10Q40256195.jpg" alt="超皮秒"/>
                             <span></span>
                             <p>超皮秒</p>
                         </a>
@@ -154,7 +148,7 @@ export default () => {
                             <p>755翠绿宝石激光治疗仪</p>
                         </a>
 <a onClick={onClick}>
-                            <img width="267" height="351" src="uploads/allimg/160809/7-160P91A636162.jpg" alt="王者之心美白嫩肤治疗仪"/>
+                            <img width="267" height="351" src="/home/uploads/allimg/160809/7-160P91A636162.jpg" alt="王者之心美白嫩肤治疗仪"/>
                             <span></span>
                             <p>王者之心美白嫩肤治疗仪</p>
                         </a>

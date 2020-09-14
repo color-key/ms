@@ -32,7 +32,7 @@ var Mylike = function() {
             this.setSafe();
             this.siteSearch();
             this.rightChat();
-            this.centerChat();
+            // this.centerChat();
             this.GoogleAnalytics();
             this.afterLoad();
         },
@@ -384,22 +384,22 @@ var Mylike = function() {
                 {"link":"javascript:openK()","pic":"/images/newindex/activity2.jpg"},
                 {"link":"javascript:openK()","pic":"/images/newindex/activity3.jpg"},
                 {"link":"javascript:openK()","pic":"/images/newindex/activity4.jpg"},
-                {"link":"javascript:openK()","pic":"/images/newindex/activity10.jpg"},
-                {"link":"javascript:openK()","pic":"/images/newindex/activity11.jpg"},
-                {"link":"javascript:openK()","pic":"/images/newindex/activity7.jpg"}
+                // {"link":"javascript:openK()","pic":"/images/newindex/activity10.jpg"},
+                // {"link":"javascript:openK()","pic":"/images/newindex/activity11.jpg"},
+                // {"link":"javascript:openK()","pic":"/images/newindex/activity7.jpg"}
               ],
               "newsInfoActivity": [
-                {"link":"javascript:openK()","pic":"/images/newindex/activity5.jpg","title":"美珊受邀参加哈尔滨医学美容学术年会"},
-                {"link":"javascript:openK()","pic":"/images/newindex/activity6.jpg","title":"美国进口鼻整形材料菲思挺发布会"}
+                {"link":"javascript:openK()","pic":"/images/newindex/activity5.jpg","title":""},
+                {"link":"javascript:openK()","pic":"/images/newindex/activity6.jpg","title":""},
+                {"link":"javascript:openK()","pic":"/images/newindex/activity21.jpg","title":""}
               ],
               "indexVideo": [
-                {"link":"javascript:void(0)","pic":"/images/newindex/activity21.jpg","video":"/images/newindex/activity21.mp4"},
                 {"link":"javascript:void(0)","pic":"/images/newindex/activity8.jpg","video":"/images/newindex/activity2.mp4"}
               ]
             };
             if(n === 'index_br'){
               $.ajax({
-                url: "/api/banner/findById?id=1",
+                url: "http://ceshi3216.tianlad.com/api/banner/findById?id=1",
                 dataType: "json",
                 type: "get",
                 success: function (res) {
