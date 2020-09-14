@@ -24,11 +24,11 @@ export default () => {
                     <ul className="slider">
                         <a>
                             <img src="static/images/newindex/doctorTeam2.jpg" alt=""/>
-                            <p>
+                            {/* <p>
                                 美珊整形美容专家团队
                                 <i></i>
                                 <span>数十位博士级整形专家<br/>专科专技匠心塑美</span>
-                            </p>
+                            </p> */}
                         </a>
                         <a>
                             <img src="static/images/newindex/doctorTeam3.jpg" alt=""/>
@@ -40,11 +40,11 @@ export default () => {
                         </a>
                         <a>
                             <img src="static/images/newindex/doctorTeam4.jpg" alt=""/>
-                            <p>
+                            {/* <p>
                                 美珊微整形医生团队
                                 <i></i>
                                 <span>个性化精致微整形，倡导自然为主<br/>定点/定位定层</span>
-                            </p>
+                            </p> */}
                         </a>
                         <a>
                             <img src="static/images/newindex/doctorTeam5.jpg" alt=""/>
