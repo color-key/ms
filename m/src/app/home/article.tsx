@@ -1,22 +1,48 @@
 import React from 'react';
+import {BASE_URL} from '@/env';
 
 const Article = () => {
+
+  const [banners, setBanners] = React.useState([]);
+
 
   const onClick = () => {
     openK();
     return false;
   }
 
+  const getData = () => {
+    $.ajax({
+      url: BASE_URL+'/bannerMobile/findById?id=1',
+      dataType: "json",
+      type: "get",
+      success: function (res: any) {
+        setBanners(res.result[0].banner.split(','));
+      },
+    })
+  }
+
+  React.useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <article className="index_content">
       <div id="banner" className="ibanner">
         <div className="test">
           <ul className="bd">
-            <li><a onClick={onClick} className="index-bn-act"><img src="/m/static/images/index/newindex/activity.jpg"/></a></li>
+            {
+              banners.map((banner, index) => {
+                return (
+                  <li key={index}><a onClick={onClick}><img src={banner}/></a></li>
+                )
+              })
+            }
+            {/* <li><a onClick={onClick} className="index-bn-act"><img src="/m/static/images/index/newindex/activity.jpg"/></a></li>
             <li><a onClick={onClick} className="index-bn-normal0"><img src="/m/static/images/index/newindex/banner5.jpg"/></a></li>
             <li><a onClick={onClick} className="index-bn-normal0"><img src="/m/static/images/index/newindex/banner6.jpg"/></a></li>
             <li><a href="subject/shproject/aqtx/index.html" className="index-bn-aq"><img src="/m/static/images/index/newindex/banner2.jpg"/></a></li>
-            <li><a href="brand/index.html" className="index-bn-brand"><img src="/m/static/images/index/newindex/banner3.jpg"/></a></li>
+            <li><a href="brand/index.html" className="index-bn-brand"><img src="/m/static/images/index/newindex/banner3.jpg"/></a></li> */}
           </ul>
         </div>
         <ul className="hd">
@@ -185,12 +211,12 @@ const Article = () => {
     <div className="caseer">
         <div className="caseer_tab" id="caseer_tab">
             <ul className="bd">
-                <li><a href="subject/sypcase/index.html"><img src="/m/static/images/index/newindex/index_case_1.jpg"/></a></li>
+                {/* <li><a href="subject/sypcase/index.html"><img src="/m/static/images/index/newindex/index_case_1.jpg"/></a></li> */}
                 <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_case_2.jpg"/></a></li>
-                <li><a href="subject/xbcase/index.html"><img src="/m/static/images/index/newindex/index_case_3.jpg"/></a></li>
+                <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_case_3.jpg"/></a></li>
                 <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_case_4.jpg"/></a></li>
                 <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_case_5.jpg"/></a></li>
-                <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_case_6.jpg"/></a></li>
+                {/* <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_case_6.jpg"/></a></li> */}
             </ul>
             <ul className="hd">
                 <li/>
@@ -210,11 +236,11 @@ const Article = () => {
     <div className="doctors">
         <div className="doctors_tab" id="doctors_tab">
             <ul className="bd">
-                <li><a href="doctor/eye/index.html"><img src="/m/static/images/index/newindex/index_doc_zxmr.jpg"/></a></li>
-                <li><a href="doctor/skin/index.html"><img src="/m/static/images/index/newindex/index_doc_pf.jpg"/></a></li>
-                <li><a href="doctor/wei/index.html"><img src="/m/static/images/index/newindex/index_doc_wzx.jpg"/></a></li>
-                <li><a href="doctor/dental/index.html"><img src="/m/static/images/index/newindex/index_doc_kq.jpg"/></a></li>
-                <li><a href="doctor/hair/index.html"><img src="/m/static/images/index/newindex/index_doc_zf.jpg"/></a></li>
+                <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_doc_pf.jpg"/></a></li>
+                <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_doc_zxmr.jpg"/></a></li>
+                {/* <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_doc_wzx.jpg"/></a></li> */}
+                {/* <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_doc_kq.jpg"/></a></li> */}
+                {/* <li><a onClick={onClick}><img src="/m/static/images/index/newindex/index_doc_zf.jpg"/></a></li> */}
             </ul>
             <ul className="hd">
                 <li/>
@@ -274,26 +300,26 @@ const Article = () => {
         <ul className="fix">
             <li>
                 <a href="brand/index.html">
-                    <img src="/m/static/images/index/newindex/index_zb_li1.jpg" alt=""/>
-                    <p><span>品牌实力</span><br/>Honor</p>
+                    <img src="/m/static/images/index/newindex/index_zb_li1.png" alt=""/>
+                    {/* <p><span>品牌实力</span><br/>Honor</p> */}
                 </a>
             </li>
             <li>
                 <a href="ambient/index.html">
-                    <img src="/m/static/images/index/newindex/index_zb_li2.jpg" alt=""/>
-                    <p><span>星级环境</span><br/>Environment</p>
+                    <img src="/m/static/images/index/newindex/index_zb_li2.png" alt=""/>
+                    {/* <p><span>星级环境</span><br/>Environment</p> */}
                 </a>
             </li>
             <li>
                 <a onClick={onClick}>
-                    <img src="/m/static/images/index/newindex/index_zb_li3.jpg" alt=""/>
-                    <p><span>热心公益</span><br/>Public spirited</p>
+                    <img src="/m/static/images/index/newindex/index_zb_li3.png" alt=""/>
+                    {/* <p><span>热心公益</span><br/>Public spirited</p> */}
                 </a>
             </li>
             <li>
                 <a href="subject/shproject/aqtx/index.html">
-                    <img src="/m/static/images/index/newindex/index_zb_li4.jpg" alt=""/>
-                    <p><span>安全服务</span><br/>service</p>
+                    <img src="/m/static/images/index/newindex/index_zb_li4.png" alt=""/>
+                    {/* <p><span>安全服务</span><br/>service</p> */}
                 </a>
             </li>
         </ul>
